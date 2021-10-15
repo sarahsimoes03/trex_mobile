@@ -124,7 +124,6 @@ function draw() {
    
   
   
-  
   drawSprites();
 }
 
@@ -138,7 +137,7 @@ function gerarNuvens() {
     nuvem.velocityX = -3;
     
      //atribuir tempo de duração à variável
-    nuvem.lifetime = 300; 
+    nuvem.lifetime = width/nuvem.velocityX; 
     
     //ajustando a profundidade
     nuvem.depth = trex.depth;
@@ -152,7 +151,7 @@ function gerarNuvens() {
 
 function gerarObstaculos() {
   if(frameCount % 60 === 0) {
-    var obstaculo = createSprite(600,height-95,10,40);
+    var obstaculo = createSprite(width+20,height-95,10,40);
     //obstaculo.debug = true;
     obstaculo.velocityX = -(6 + 3*pontuacao/100);
     
